@@ -1,9 +1,11 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
 app.use(express.json()); // Parse JSON body
+app.use(cors()); // Enable CORS
 
 // Configure Nodemailer transporter
 const transporter = nodemailer.createTransport({
